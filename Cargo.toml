@@ -8,8 +8,8 @@ edition = "2024"
 rust-version = "1.85"
 
 [workspace.dependancies]
-aural-dsp = { path = "crates/aural-dsp" }
-aural-core = { path = "crates/aural-core" }
+klang-dsp = { path = "crates/klang-dsp" }
+klang-core = { path = "crates/klang-core" }
 bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
 serde = { version = "1", features = ["derive"] }
 toml = "0.8"
@@ -23,5 +23,5 @@ codegen-units = 1
 debug = "line-tables-only"
 
 # DSP code unusuably slow without optimizations, keep it fast in debug builds too
-[profile.dev.package.aural-dsp]
+[profile.dev.package.klang-dsp]
 opt-level = 3
