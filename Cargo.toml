@@ -1,0 +1,27 @@
+[workspace]
+resolver = "3"
+members = ["crates/*]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+
+[workspace.dependancies]
+aural-dsp = { path = "crates/aural-dsp" }
+aural-core = { path = "crates/aural-core" }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "2"
+log = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = "line-tables-only"
+
+# DSP code unusuably slow without optimizations, keep it fast in debug builds too
+[profile.dev.package.aural-dsp]
+opt-level = 3
