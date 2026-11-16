@@ -1,13 +1,13 @@
 [workspace]
 resolver = "3"
-members = ["crates/*]
+members = ["crates/*"]
 
 [workspace.package]
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.85"
 
-[workspace.dependancies]
+[workspace.dependencies]
 klang-dsp = { path = "crates/klang-dsp" }
 klang-core = { path = "crates/klang-core" }
 bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
